@@ -1,0 +1,35 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+            <alert></alert>
+            <div style="padding-top:20px ">
+                <h2>
+                    Login</h2>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="email" formControlName="Email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }" />
+                        <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
+                            <div *ngIf="f.Email.errors.required">Email is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="HashedPassword">Password</label>
+                        <input type="password" formControlName="HashedPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.HashedPassword.errors }" />
+                        <div *ngIf="submitted && f.HashedPassword.errors" class="invalid-feedback">
+                            <div *ngIf="f.HashedPassword.errors.required">Password is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button [disabled]="loading" class="btn btn-primary">
+                        <!--span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span-->
+                       
+                        Login
+                    </button>
+                        <a routerLink="/register" class="btn btn-link">Register</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

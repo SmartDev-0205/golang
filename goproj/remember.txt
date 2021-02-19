@@ -1,0 +1,2 @@
+allow-cor in golang:
+https://www.thepolyglotdeveloper.com/2017/10/handling-cors-golang-web-application/
